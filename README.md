@@ -52,7 +52,7 @@ Wonderlust is a web application inspired by Airbnb, designed to help users find 
 - `public/`: Static assets (CSS, JS)
 - `routes/`: Express routes (implied structure)
 - `init/`: Database initialization scripts
-- `utils/`: Utility functions (Error handling)
+-   `utils/`: Utility functions (Error handling)
 
 ## Future Improvements
 

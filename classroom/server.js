@@ -3,32 +3,33 @@ const app = express();
 const port = 3000;
 const users = require("./routes/user.js");
 const posts = require("./routes/post.js");
-const cookieParser = require("cookie-parser");
+const session = require("express-session");
 
-app.use(cookieParser());
+const sessionOptions = {
+    secret: "mysupersecretstring",
+    resave: false,
+    saveUninitialized: true
+};
+
+app.use(
+    session(sessionOptions)
+);
 
 
-app.get("/getcookies", (req, res) => {
-    res.cookie("greet", "namaste");
-    res.cookie("madeIn", "India");
-    res.send("Hello, I am a cookie!");
+app.get("/register", (req, res) => {
+    let { name } = req.query;
+    req.session.username = name;
+    res.send(`welcome ${name}`);
 });
 
-app.get("/greet", (req, res) => {
-    let { name = "anonymous"} = req.cookies;
-    res.send(`Hello, ${name}!`);
-});
+// app.get("/test", (req, res) => {
+//     req.session.count = req.session.count + 1;
+//     res.send(`You visited this page ${req.session.count} times`);
+// });
 
-
-
-app.get("/", (req, res) => {
-    console.dir(req.cookies);
-    res.send("Hi, welcome to Wonderlust!");
-});
-
-app.use(users);
-app.use(posts);
-
+// app.get("/test", (req, res) => {
+//     res.send("test session");
+// });
 
 
 app.listen(port, () => {

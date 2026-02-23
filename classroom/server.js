@@ -17,9 +17,13 @@ app.use(
 
 
 app.get("/register", (req, res) => {
-    let { name } = req.query;
+    let { name = "anonymous" } = req.query;
     req.session.username = name;
     res.send(`welcome ${name}`);
+});
+
+app.get("/", (req, res) => {
+    res.send(`welcome ${req.session.username}`);
 });
 
 // app.get("/test", (req, res) => {

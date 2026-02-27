@@ -4,6 +4,7 @@ const port = 3000;
 const users = require("./routes/user.js");
 const posts = require("./routes/post.js");
 const session = require("express-session");
+const flash = require("connect-flash");
 
 const sessionOptions = {
     secret: "mysupersecretstring",
@@ -15,27 +16,23 @@ app.use(
     session(sessionOptions)
 );
 
+app.use(flash());
+
 
 app.get("/register", (req, res) => {
     let { name = "anonymous" } = req.query;
-    req.session.username = name;
-    res.send(`welcome ${name}`);
+    req.session.name = name;
+    res.send(name);
 });
 
 app.get("/", (req, res) => {
-    res.send(`welcome ${req.session.username}`);
+    res.send("Hi, I am root,,");
 });
 
-// app.get("/test", (req, res) => {
-//     req.session.count = req.session.count + 1;
-//     res.send(`You visited this page ${req.session.count} times`);
-// });
-
-// app.get("/test", (req, res) => {
-//     res.send("test session");
-// });
-
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+app.get("/reqcount", (req, res) => {
+    if (req.session.count){
+        req.session.count++;
+    }else {
+        req.session.count =1;
+    }
+})

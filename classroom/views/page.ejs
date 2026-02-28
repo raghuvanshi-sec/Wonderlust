@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if (typeof successmessages !== 'undefined' && successmessages && successmessages.length > 0) { %>
+        <% for(let msg of successmessages) { %>
+            <h2 style="color: green;"><%= msg %></h2>
+        <% } %>
+    <% } %>
+
+    <% if (typeof errormessages !== 'undefined' && errormessages && errormessages.length > 0) { %>
+        <% for(let msg of errormessages) { %>
+            <h2 style="color: red;"><%= msg %></h2>
+        <% } %>
+    <% } %>
+
+    <h1>Hello <%= name %>, welcome!</h1>
+</body>
+     
+
+</html>

@@ -11,6 +11,7 @@ const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
 const flash = require("connect-flash");
+const helmet = require("helmet");
 
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -20,7 +21,7 @@ const listingRoutes = require("./routes/listing.js");
 const reviewRoutes = require("./routes/review.js");
 const userRoutes = require("./routes/user.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wonderlust";
+const DB_URL = process.env.DB_URL;
 
 main()
   .then(() => {
@@ -31,7 +32,7 @@ main()
   });
 
 async function main() {
-  await mongoose.connect(MONGO_URL);
+  await mongoose.connect(DB_URL);
 }
 
 app.set("view engine", "ejs");
@@ -40,9 +41,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
+app.use(helmet({contentSecurityPolicy: false}));
 
 const sessionOptions = {
-    secret: "mysupersecretcode",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {

@@ -1,65 +1,150 @@
 # Wonderlust
 
-Wonderlust is a web application inspired by Airbnb, designed to help users find and manage unique travel accommodations. It provides a platform for listing properties, browsing available stays, and leaving reviews.
+Wonderlust is a full-stack web application inspired by Airbnb. It provides a robust platform for users to discover, list, and manage unique travel accommodations worldwide. Built with modern web technologies, Wonderlust offers a seamless and secure user experience for both hosts and travelers.
 
-## Features
+## 🚀 Key Features
 
-- **Listings Management**: Users can create, view, edit, and delete property listings.
-- **Detailed Information**: Each listing includes a title, description, price, location, country, and images.
-- **Reviews & Ratings**: Users can leave comments and ratings (1-5 stars) for properties.
-- **Responsive Design**: Built with Bootstrap for a seamless experience on all devices.
-- **Data Validation**: Robust server-side validation using Joi to ensure data integrity.
+- **Authentication & Authorization**: Secure user registration, login, and session management using Passport.js. Role-based access control for listings and reviews.
+- **Listings Management**: Full CRUD operations for properties. Users can create, edit, view, and delete their own accommodations.
+- **Interactive Maps**: Integrated Mapbox for interactive and precise geographical property locations.
+- **Cloud Image Storage**: Seamless and secure image uploads powered by Cloudinary.
+- **Reviews & Ratings**: An interactive review system allowing users to leave ratings and comments on their stays.
+- **Data Integrity & Security**: Server-side validation with Joi, helmet for setting HTTP response headers, and secure routing.
+- **Responsive UI**: A fully responsive and aesthetic user interface built with Bootstrap and EJS templates.
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- **Frontend**: EJS (Embedded JavaScript), Bootstrap, CSS, JavaScript
+- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap, EJS (Embedded JavaScript), EJS-Mate
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB, Mongoose
-- **Validation**: Joi (Server-side schema validation)
+- **Security & Authentication**: Passport.js, Helmet, Express-Session
+- **Third-Party Integrations**: Cloudinary (Image Hosting), Mapbox (Geocoding & Maps)
 
-## Installation
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed on your local machine:
+
+- [Node.js](https://nodejs.org/) (v14 or higher recommended)
+- [MongoDB](https://www.mongodb.com/) (running locally or a MongoDB Atlas URI)
+- Cloudinary Account (for image uploads)
+- Mapbox Account (for map features)
+
+## ⚙️ Installation & Setup
 
 1. **Clone the repository:**
 
-    git clone <https://github.com/raghuvanshi-sec/Wonderlust.git>
-    cd Wonderlust
+   ```bash
+   git clone https://github.com/raghuvanshi-sec/Wonderlust.git
+   cd Wonderlust
+   ```
 
 2. **Install dependencies:**
 
-    npm install
+   ```bash
+   npm install
+   ```
 
-3. **Start the MongoDB server:**
-    Make sure you have MongoDB installed and running locally.
+3. **Environment Configuration:**
+   Create a `.env` file in the root directory and add your environment variables.
+   *(Note: Ensure your `.env` file is never committed to version control)*
 
-    mongod
+   ```env
+   # Database Configuration
+   DB_URL=<your-mongodb-connection-string>
+   
+   # Cloudinary Configuration
+   CLOUD_NAME=<your-cloudinary-cloud-name>
+   CLOUD_API_KEY=<your-cloudinary-api-key>
+   CLOUD_API_SECRET=<your-cloudinary-api-secret>
+   
+   # Mapbox Configuration
+   MAP_TOKEN=<your-mapbox-token>
+   
+   # App Configuration
+   SECRET=<your-session-secret>
+   PORT=<your-preferred-port>
+   ```
 
-4. **Initialize the database (optional):**
-    To seed the database with sample data:
+4. **Initialize the database (Optional):**
+   To seed the database with initial sample data:
 
-    node init/index.js
+   ```bash
+   node init/index.js
+   ```
 
 5. **Run the application:**
+   For development mode with auto-reload:
 
-    node app.js
+   ```bash
+   npm run dev
+   ```
 
-6. **Access the app:**
-    Open your browser and navigate to `http://localhost:8080`.
+   Or standard start:
 
-## Directory Structure
+   ```bash
+   node app.js
+   ```
 
-- `models/`: Database schemas (Listing, Review)
-- `views/`: EJS templates for pages and layouts
-- `public/`: Static assets (CSS, JS)
-- `routes/`: Express routes (implied structure)
-- `init/`: Database initialization scripts
-- `utils/`: Utility functions (Error handling)
+6. **Access the application:**
+   Check your terminal output for the local server URL. Open your browser and navigate to the port specified in your environment configuration (e.g., `http://localhost:<PORT>`).
 
-## Future Improvements
+## 📁 Project Structure
 
-- User Authentication (Login/Signup)
-- Map Integration (showing property locations on a map)
-- Image Upload (Cloudinary storage)
+- `controllers/` - Core application logic and request handling
+- `models/` - Mongoose database schemas (Listing, Review, User)
+- `routes/` - Express route definitions
+- `views/` - EJS templates and UI components
+- `public/` - Static assets (CSS, JS, Images)
+- `middleware.js` - Custom middleware for authentication and validation
+- `utils/` - Utility classes and error handling functions
+- `schema.js` - Joi validation schemas
 
-## License
+## 🗺️ Architecture & Flow
 
-This project is open-source and available under the permissions of the MIT License.
+### Application Data Flow
+
+```mermaid
+graph TD
+    A[Client Browser] -->|HTTP Requests| B(Express Router)
+    B --> C{Middleware}
+    C -->|Auth/Validation Failed| D[Redirect/Error Page]
+    C -->|Pass| E[Controllers]
+    
+    E -->|Read/Write Data| F[(MongoDB / Mongoose)]
+    E -->|Upload Images| G[Cloudinary API]
+    E -->|Geocoding| H[Mapbox API]
+    
+    F --> E
+    G -->|Image URL| E
+    H -->|Coordinates| E
+    
+    E -->|Render Data| I[EJS Templates]
+    I -->|HTML/CSS/JS| A
+```
+
+### Listing Creation Flow
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant Server
+    participant Cloudinary
+    participant Mapbox
+    participant Database
+
+    User->>Frontend: Submit listing form with image
+    Frontend->>Server: POST /listings (FormData)
+    Server->>Cloudinary: Upload image stream
+    Cloudinary-->>Server: Return image URL & filename
+    Server->>Mapbox: Forward Geocoding (Address/Location)
+    Mapbox-->>Server: Return GeoJSON Coordinates
+    Server->>Database: Save new listing (URL & Coordinates)
+    Database-->>Server: Confirmation
+    Server->>Frontend: Redirect to listing page
+    Frontend-->>User: Display new listing on Map
+```
+
+## 📄 License
+
+This project is open-source and available under the terms of the MIT License.

@@ -1,0 +1,286 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "app.js",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L1",
+      "id": "app_js",
+      "community": 2,
+      "norm_label": "app.js"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L34",
+      "id": "wonderlust_app_main",
+      "community": 2,
+      "norm_label": "main()"
+    },
+    {
+      "label": "cloudConfig.js",
+      "file_type": "code",
+      "source_file": "cloudConfig.js",
+      "source_location": "L1",
+      "id": "cloudconfig_js",
+      "community": 3,
+      "norm_label": "cloudconfig.js"
+    },
+    {
+      "label": "middleware.js",
+      "file_type": "code",
+      "source_file": "middleware.js",
+      "source_location": "L1",
+      "id": "middleware_js",
+      "community": 4,
+      "norm_label": "middleware.js"
+    },
+    {
+      "label": "schema.js",
+      "file_type": "code",
+      "source_file": "schema.js",
+      "source_location": "L1",
+      "id": "schema_js",
+      "community": 5,
+      "norm_label": "schema.js"
+    },
+    {
+      "label": "listings.js",
+      "file_type": "code",
+      "source_file": "controllers\\listings.js",
+      "source_location": "L1",
+      "id": "controllers_listings_js",
+      "community": 6,
+      "norm_label": "listings.js"
+    },
+    {
+      "label": "reviews.js",
+      "file_type": "code",
+      "source_file": "controllers\\reviews.js",
+      "source_location": "L1",
+      "id": "controllers_reviews_js",
+      "community": 7,
+      "norm_label": "reviews.js"
+    },
+    {
+      "label": "users.js",
+      "file_type": "code",
+      "source_file": "controllers\\users.js",
+      "source_location": "L1",
+      "id": "controllers_users_js",
+      "community": 8,
+      "norm_label": "users.js"
+    },
+    {
+      "label": "data.js",
+      "file_type": "code",
+      "source_file": "init\\data.js",
+      "source_location": "L1",
+      "id": "init_data_js",
+      "community": 9,
+      "norm_label": "data.js"
+    },
+    {
+      "label": "index.js",
+      "file_type": "code",
+      "source_file": "init\\index.js",
+      "source_location": "L1",
+      "id": "init_index_js",
+      "community": 0,
+      "norm_label": "index.js"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "init\\index.js",
+      "source_location": "L18",
+      "id": "init_index_main",
+      "community": 0,
+      "norm_label": "main()"
+    },
+    {
+      "label": "initDB()",
+      "file_type": "code",
+      "source_file": "init\\index.js",
+      "source_location": "L22",
+      "id": "init_index_initdb",
+      "community": 0,
+      "norm_label": "initdb()"
+    },
+    {
+      "label": "listing.js",
+      "file_type": "code",
+      "source_file": "models\\listing.js",
+      "source_location": "L1",
+      "id": "models_listing_js",
+      "community": 10,
+      "norm_label": "listing.js"
+    },
+    {
+      "label": "review.js",
+      "file_type": "code",
+      "source_file": "models\\review.js",
+      "source_location": "L1",
+      "id": "models_review_js",
+      "community": 11,
+      "norm_label": "review.js"
+    },
+    {
+      "label": "user.js",
+      "file_type": "code",
+      "source_file": "models\\user.js",
+      "source_location": "L1",
+      "id": "models_user_js",
+      "community": 12,
+      "norm_label": "user.js"
+    },
+    {
+      "label": "map.js",
+      "file_type": "code",
+      "source_file": "public\\js\\map.js",
+      "source_location": "L1",
+      "id": "public_js_map_js",
+      "community": 13,
+      "norm_label": "map.js"
+    },
+    {
+      "label": "script.js",
+      "file_type": "code",
+      "source_file": "public\\js\\script.js",
+      "source_location": "L1",
+      "id": "public_js_script_js",
+      "community": 14,
+      "norm_label": "script.js"
+    },
+    {
+      "label": "listing.js",
+      "file_type": "code",
+      "source_file": "routes\\listing.js",
+      "source_location": "L1",
+      "id": "routes_listing_js",
+      "community": 15,
+      "norm_label": "listing.js"
+    },
+    {
+      "label": "review.js",
+      "file_type": "code",
+      "source_file": "routes\\review.js",
+      "source_location": "L1",
+      "id": "routes_review_js",
+      "community": 16,
+      "norm_label": "review.js"
+    },
+    {
+      "label": "user.js",
+      "file_type": "code",
+      "source_file": "routes\\user.js",
+      "source_location": "L1",
+      "id": "routes_user_js",
+      "community": 17,
+      "norm_label": "user.js"
+    },
+    {
+      "label": "ExpressError.js",
+      "file_type": "code",
+      "source_file": "utils\\ExpressError.js",
+      "source_location": "L1",
+      "id": "utils_expresserror_js",
+      "community": 1,
+      "norm_label": "expresserror.js"
+    },
+    {
+      "label": "ExpressError",
+      "file_type": "code",
+      "source_file": "utils\\ExpressError.js",
+      "source_location": "L1",
+      "id": "utils_expresserror_expresserror",
+      "community": 1,
+      "norm_label": "expresserror"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "utils\\ExpressError.js",
+      "source_location": "L2",
+      "id": "utils_expresserror_expresserror_constructor",
+      "community": 1,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": "wrapAsync.js",
+      "file_type": "code",
+      "source_file": "utils\\wrapAsync.js",
+      "source_location": "L1",
+      "id": "utils_wrapasync_js",
+      "community": 18,
+      "norm_label": "wrapasync.js"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "app_js",
+      "_tgt": "wonderlust_app_main",
+      "source": "app_js",
+      "target": "wonderlust_app_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "init\\index.js",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "init_index_js",
+      "_tgt": "init_index_main",
+      "source": "init_index_js",
+      "target": "init_index_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "init\\index.js",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "init_index_js",
+      "_tgt": "init_index_initdb",
+      "source": "init_index_js",
+      "target": "init_index_initdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils\\ExpressError.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "utils_expresserror_js",
+      "_tgt": "utils_expresserror_expresserror",
+      "source": "utils_expresserror_js",
+      "target": "utils_expresserror_expresserror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "utils\\ExpressError.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "utils_expresserror_expresserror",
+      "_tgt": "utils_expresserror_expresserror_constructor",
+      "source": "utils_expresserror_expresserror",
+      "target": "utils_expresserror_expresserror_constructor",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}

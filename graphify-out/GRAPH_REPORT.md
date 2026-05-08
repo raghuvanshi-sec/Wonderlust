@@ -1,31 +1,30 @@
-# Graph Report - Wonderlust  (2026-05-08)
+# Graph Report - .  (2026-05-08)
 
 ## Corpus Check
-- 30 files · ~4,782 words
+- 20 files · ~1,000 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 24 nodes · 5 edges · 1 communities detected
+- 20 nodes · 29 edges · 1 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
-- Token cost: 0 input · 0 output
+- Token cost: 1,000 input · 500 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Community 0|Community 0]]
+- [[_COMMUNITY_Community 2|Community 2]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `ExpressError` - 2 edges
 
 ## Surprising Connections (you probably didn't know these)
 - None detected - all connections are within the same source files.
 
 ## Communities
 
-### Community 0 - "Community 0"
+### Community 2 - "Community 2"
 Cohesion: 0.67
-Nodes (1): ExpressError
+Nodes (1): Views Directory
 
 ## Knowledge Gaps
-- **Thin community `Community 0`** (3 nodes): `ExpressError`, `.constructor()`, `ExpressError.js`
+- **Thin community `Community 2`** (3 nodes): `app.js`, `ExpressError.js`, `Views Directory`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions

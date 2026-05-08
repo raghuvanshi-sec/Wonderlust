@@ -90,7 +90,7 @@
       "source_file": "init\\index.js",
       "source_location": "L1",
       "id": "init_index_js",
-      "community": 0,
+      "community": 1,
       "norm_label": "index.js"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "init\\index.js",
       "source_location": "L18",
       "id": "init_index_main",
-      "community": 0,
+      "community": 1,
       "norm_label": "main()"
     },
     {
@@ -108,7 +108,7 @@
       "source_file": "init\\index.js",
       "source_location": "L22",
       "id": "init_index_initdb",
-      "community": 0,
+      "community": 1,
       "norm_label": "initdb()"
     },
     {
@@ -189,7 +189,7 @@
       "source_file": "utils\\ExpressError.js",
       "source_location": "L1",
       "id": "utils_expresserror_js",
-      "community": 1,
+      "community": 0,
       "norm_label": "expresserror.js"
     },
     {
@@ -198,7 +198,7 @@
       "source_file": "utils\\ExpressError.js",
       "source_location": "L1",
       "id": "utils_expresserror_expresserror",
-      "community": 1,
+      "community": 0,
       "norm_label": "expresserror"
     },
     {
@@ -207,7 +207,7 @@
       "source_file": "utils\\ExpressError.js",
       "source_location": "L2",
       "id": "utils_expresserror_expresserror_constructor",
-      "community": 1,
+      "community": 0,
       "norm_label": ".constructor()"
     },
     {

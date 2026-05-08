@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Community 1|Community 1]]
+- [[_COMMUNITY_Community 0|Community 0]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `ExpressError` - 2 edges
@@ -20,12 +20,12 @@
 
 ## Communities
 
-### Community 1 - "Community 1"
+### Community 0 - "Community 0"
 Cohesion: 0.67
 Nodes (1): ExpressError
 
 ## Knowledge Gaps
-- **Thin community `Community 1`** (3 nodes): `ExpressError`, `.constructor()`, `ExpressError.js`
+- **Thin community `Community 0`** (3 nodes): `ExpressError`, `.constructor()`, `ExpressError.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
